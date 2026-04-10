@@ -1,23 +1,18 @@
 <html>
 <head>
-<meta name="google-site-verification" content="N4MvkfKAEh5Q2YmuWoBjNBQmX3sKq56XcRSfP8VU9jo">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="N4MvkfKAEh5Q2YmuWoBjNBQmX3sKq56XcRSfP8VU9jo" />
+<meta name="viewport" content="width=320, user-scalable=yes" id="wixMobileViewport">
 <title>SaharaClay</title>
 
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-<script id="pixel-chaty" async src="https://cdn.chaty.app/pixel.js?id=YjQzJds8"></script>
+<script id="pixel-chaty" async="true" src="https://cdn.chaty.app/pixel.js?id=YjQzJds8"></script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap');
 
-body {
-  margin: 0;
-  font-family: 'Cactus Classical Serif', serif;
-}
-
-/* Overlay (NO bloquea interacción) */
+/* Overlay (no bloquea interacción) */
 #cookie-overlay {
   position: fixed;
   inset: 0;
@@ -26,64 +21,60 @@ body {
   pointer-events: none;
 }
 
-/* Banner móvil */
+/* Banner simple móvil */
 #cookie-banner {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
   background: #f1e3c8;
-  border-radius: 16px 16px 0 0;
-  padding: 20px;
+  border-radius: 16px;
+  padding: 16px;
   z-index: 9999;
+  font-family: 'Cactus Classical Serif', serif;
   color: #393D32;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 /* Texto */
 #cookie-banner h2 {
-  margin: 0 0 10px;
-  font-size: 16px;
+  font-size: 14px;
+  margin: 0 0 8px;
   font-weight: normal;
 }
 
 #cookie-banner p {
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 16px;
+  font-size: 12px;
+  margin-bottom: 12px;
 }
 
 /* Link */
 #cookie-banner a {
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   text-decoration: underline;
   color: #393D32;
-}
-
-#cookie-banner a:hover {
-  opacity: 0.6;
 }
 
 /* Botones */
 .cookie-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  justify-content: flex-end;
 }
 
 .cookie-btn {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  font-size: 14px;
+  padding: 8px 14px;
+  font-size: 12px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 /* Decline */
 .decline {
   background: transparent;
-  border: 1.5px solid #393D32;
+  border: 1px solid #393D32;
   color: #393D32;
 }
 
@@ -97,11 +88,11 @@ body {
 /* Cerrar */
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 14px;
+  top: 6px;
+  right: 10px;
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 14px;
   color: #393D32;
 }
 </style>
@@ -112,7 +103,7 @@ body {
 
 <!-- Iframe Wix -->
 <iframe src="https://saharaclayinfo.wixsite.com/saharaclay"
-style="position:fixed; top:-51px; left:0; width:100%; height:110%; border:none; z-index:9;">
+style="position:fixed; top:-51px; left:0px; bottom:0px; right:0px; width:100%; height:110%; border:none; margin:0; padding:0; overflow:hidden; z-index:9;">
 </iframe>
 
 <!-- Overlay -->
@@ -127,7 +118,6 @@ style="position:fixed; top:-51px; left:0; width:100%; height:110%; border:none; 
 
 <p>
 We use cookies to make this website work properly.
-Some are necessary for its operation, while others help us improve it.
 </p>
 
 <a href="/Privacy%20Policy.pdf" target="_blank">
@@ -142,7 +132,7 @@ Some are necessary for its operation, while others help us improve it.
 </div>
 
 <script>
-// Ocultar si ya eligió
+// Estado cookies
 if (localStorage.getItem('cookie_consent')) {
   document.getElementById('cookie-banner').style.display = 'none';
   document.getElementById('cookie-overlay').style.display = 'none';
