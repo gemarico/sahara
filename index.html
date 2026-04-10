@@ -8,9 +8,9 @@
 
 <script id="pixel-chaty" async src="https://cdn.chaty.app/pixel.js?id=YjQzJds8"></script>
 
-<!-- Fuentes -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap');
+
 body {
   margin: 0;
 }
@@ -23,17 +23,19 @@ body {
   z-index: 9998;
 }
 
-/* Banner */
+/* Banner responsive */
 #cookie-banner {
   position: fixed;
-  top: 85%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 24px;
+  transform: translateX(-50%);
   background: #f1e3c8;
   border-radius: 16px;
-  padding: 36px 40px 32px;
+  
+  padding: clamp(20px, 3vw, 36px);
   max-width: 600px;
-  width: 90%;
+  width: calc(100% - 32px);
+
   z-index: 9999;
   font-family: 'Cactus Classical Serif', serif;
   color: #393D32;
@@ -43,26 +45,24 @@ body {
 /* Título */
 #cookie-banner h2 {
   margin: 0 0 16px;
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: normal;
 }
 
 /* Texto */
 #cookie-banner p {
   margin: 0 0 20px;
-  font-size: 16px;
+  font-size: clamp(14px, 1.6vw, 16px);
   line-height: 1.6;
-  font-family: 'Cactus Classical Serif', serif;
 }
 
 /* Enlace */
 #cookie-banner a {
   color: #393D32;
   font-size: 16px;
-  font-family: 'Cactus Classical Serif', serif;
   text-decoration: underline;
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   transition: opacity 0.2s ease;
 }
 
@@ -75,12 +75,13 @@ body {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .cookie-btn {
-  padding: 12px 32px;
+  padding: 10px 24px;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: clamp(14px, 1.5vw, 16px);
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -119,6 +120,28 @@ body {
   cursor: pointer;
   color: #393D32;
 }
+
+/* Móvil */
+@media (max-width: 600px) {
+
+  #cookie-banner {
+    left: 0;
+    bottom: 0;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .cookie-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cookie-btn {
+    width: 100%;
+  }
+}
 </style>
 
 </head>
@@ -146,7 +169,7 @@ Some are necessary for its operation, while others
 help us improve it and understand how it is used.
 </p>
 
-<a href="https://drive.google.com/uc?export=download&id=1jX_JaJGEJ2XWhuU2LgCwt5Jb-EJjAdeYJJwU1LqZV2M" target="_blank">
+<a href="#" onclick="window.open('https://drive.google.com/uc?export=download&id=1jX_JaJGEJ2XWhuU2LgCwt5Jb-EJjAdeYJJwU1LqZV2M', '_blank')">
   Privacy Policy
 </a>
 
