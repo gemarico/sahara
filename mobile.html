@@ -1,14 +1,172 @@
 <html>
-  <html>
-    <head>
-      <meta name="google-site-verification" content="N4MvkfKAEh5Q2YmuWoBjNBQmX3sKq56XcRSfP8VU9jo" />
-      <meta name="viewport" content="width=320, user-scalable=yes" id="wixMobileViewport">
-      <title>SaharaClay</title>
-      <link rel="icon" href="favicon.ico" type="image/x-icon">
-      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-      <script id="pixel-chaty" async="true" src="https://cdn.chaty.app/pixel.js?id=YjQzJds8" style="z-index:99999;"></script>
-    </head>
-    <body>
-      <iframe src="https://saharaclayinfo.wixsite.com/saharaclay" style="position:fixed; top:-51px; left:0px; bottom:0px; right:0px; width:100%; height:110%; border:none; margin:0; padding:0; overflow:hidden; z-index:9;"></iframe>
-    </body>
-  </html>
+<head>
+<meta name="google-site-verification" content="N4MvkfKAEh5Q2YmuWoBjNBQmX3sKq56XcRSfP8VU9jo">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaharaClay</title>
+
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+<script id="pixel-chaty" async src="https://cdn.chaty.app/pixel.js?id=YjQzJds8"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Cactus Classical Serif', serif;
+}
+
+/* Overlay (NO bloquea interacción) */
+#cookie-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 9998;
+  pointer-events: none;
+}
+
+/* Banner móvil */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #f1e3c8;
+  border-radius: 16px 16px 0 0;
+  padding: 20px;
+  z-index: 9999;
+  color: #393D32;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+}
+
+/* Texto */
+#cookie-banner h2 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+#cookie-banner p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* Link */
+#cookie-banner a {
+  display: block;
+  margin-bottom: 16px;
+  text-decoration: underline;
+  color: #393D32;
+}
+
+#cookie-banner a:hover {
+  opacity: 0.6;
+}
+
+/* Botones */
+.cookie-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cookie-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Decline */
+.decline {
+  background: transparent;
+  border: 1.5px solid #393D32;
+  color: #393D32;
+}
+
+/* Accept */
+.accept {
+  background: #393D32;
+  color: #f1e3c8;
+  border: none;
+}
+
+/* Cerrar */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #393D32;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Iframe Wix -->
+<iframe src="https://saharaclayinfo.wixsite.com/saharaclay"
+style="position:fixed; top:-51px; left:0; width:100%; height:110%; border:none; z-index:9;">
+</iframe>
+
+<!-- Overlay -->
+<div id="cookie-overlay"></div>
+
+<!-- Banner -->
+<div id="cookie-banner">
+
+<button class="close-btn" onclick="cerrarBanner()">×</button>
+
+<h2>We have some cookies</h2>
+
+<p>
+We use cookies to make this website work properly.
+Some are necessary for its operation, while others help us improve it.
+</p>
+
+<a href="/Privacy%20Policy.pdf" target="_blank">
+  Privacy Policy
+</a>
+
+<div class="cookie-buttons">
+  <button class="cookie-btn decline" onclick="rechazarCookies()">Decline</button>
+  <button class="cookie-btn accept" onclick="aceptarCookies()">Got it!</button>
+</div>
+
+</div>
+
+<script>
+// Ocultar si ya eligió
+if (localStorage.getItem('cookie_consent')) {
+  document.getElementById('cookie-banner').style.display = 'none';
+  document.getElementById('cookie-overlay').style.display = 'none';
+}
+
+function aceptarCookies() {
+  localStorage.setItem('cookie_consent', 'accepted');
+  ocultarBanner();
+}
+
+function rechazarCookies() {
+  localStorage.setItem('cookie_consent', 'rejected');
+  ocultarBanner();
+}
+
+function cerrarBanner() {
+  ocultarBanner();
+}
+
+function ocultarBanner() {
+  document.getElementById('cookie-banner').style.display = 'none';
+  document.getElementById('cookie-overlay').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
